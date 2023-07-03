@@ -1,0 +1,7 @@
+@startuml Meu Diagram
+
+header Subscription Platform Acceptance Test
+title "Creating a Postpaid Subscription to High-Income Plan"
+footer powered by Almerindo Rehem
+
+@enduml

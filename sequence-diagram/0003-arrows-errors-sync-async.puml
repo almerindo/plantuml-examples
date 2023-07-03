@@ -1,0 +1,24 @@
+
+
+@startuml Meu Diagram
+
+header Subscription Platform Acceptance Test
+title "Creating a Postpaid Subscription to High-Income Plan"
+footer powered by Almerindo Rehem
+
+
+
+
+participant serviceA
+participant serviceB
+
+serviceA ->x serviceB
+serviceB -->x serviceA
+
+serviceA -> serviceB : SYNC 
+serviceB --> serviceA: SYNC
+
+serviceA ->> serviceB : ASYNC
+serviceB -->> serviceA : ASYNC
+
+@enduml

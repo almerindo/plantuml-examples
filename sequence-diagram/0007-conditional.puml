@@ -1,0 +1,38 @@
+
+
+@startuml Meu Diagram
+
+header Subscription Platform Acceptance Test
+title "Creating a Postpaid Subscription to High-Income Plan"
+footer powered by Almerindo Rehem
+
+!$COLOR_SUCCESS = "#green"
+!$COLOR_ERROR = "#red"
+
+!$FONT_COLOR = "<font color=pink>"
+
+
+participant serviceA $COLOR_ERROR
+participant serviceB #FFA000
+
+serviceA [$COLOR_ERROR]->x serviceB
+activate serviceA
+
+
+serviceB -->x serviceA
+
+serviceA -> serviceB : SYNC 
+serviceB [$COLOR_SUCCESS]--> serviceA: SYNC
+deactivate serviceA
+
+
+serviceA ->> serviceB ++: ASYNC
+serviceB -->> serviceA --: ASYNC
+
+alt#Gold #LightBlue Successful case
+    serviceA -> serviceB: Authentication Accepted
+else #Pink Failure
+    serviceA -> serviceB: Authentication Rejected
+end
+
+@enduml
